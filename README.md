@@ -19,7 +19,9 @@
 
 # Настройка
 
-основные настройки в файле application.properties
+основные настройки в файле 
+`./src/main/resources/application.properties`
+
 ```ini
 server.port=8080
 
@@ -31,4 +33,24 @@ giphy.key=hidyT0yooJt3jmgfSpg9CsPge7xEEZqb
 giphy.url=http://api.giphy.com/v1/gifs/random
 giphy.tag.up=rich
 giphy.tag.down=broke
+```
+# Запуск
+- сборка
+```
+./gradlew clean
+./gradlew build
+```
+- запуск
+```sh
+ java -jar ./build/libs/GifExchangeRate-0.0.1-SNAPSHOT.jar
+```
+
+# Docker
+- сборка
+```
+docker build -t GifExchangeRate .
+```
+- запуск
+```
+docker run -p 8080:8080 GifExchangeRate
 ```
